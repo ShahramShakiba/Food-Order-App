@@ -73,16 +73,8 @@ body {
 }
 
 #main-header button {
-  width: 7rem;
-  background: #1f1f1e;
-  color: #f3ecc3;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-family: 'Lato', sans-serif;
-  border: 3px solid #cacaca;
-  border-radius: 90% / 15%;
-  cursor: pointer;
-  margin-left: 1.5rem;
-  
 }
 
 h1 {
@@ -271,12 +263,13 @@ h1 {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  color: #ffc404;
+  color: #ccb802;
+  transition: all 0.2s ease-in;
 }
 
 .text-button:hover,
 .text-button:active {
-  color: #ffab04;
+  color: #ffe600;
 }
 
 .modal {
