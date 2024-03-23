@@ -1,5 +1,4 @@
-import fs from 'node:fs/promises';
-
+import { readFile, writeFile } from 'fs/promises';
 import bodyParser from 'body-parser';
 import express from 'express';
 
@@ -16,17 +15,19 @@ app.use((req, res, next) => {
 });
 
 app.get('/meals', async (req, res) => {
-  const meals = await fs.readFile('./data/available-meals.json', 'utf8');
+  const meals = await readFile('./data/available-meals.json', 'utf-8');
   res.json(JSON.parse(meals));
 });
 
 app.post('/orders', async (req, res) => {
   const orderData = req.body.order;
 
-  if (orderData === null || orderData.items === null || orderData.items === []) {
-    return res
-      .status(400)
-      .json({ message: 'Missing data.' });
+  if (
+    orderData === null ||
+    orderData.items === null ||
+    orderData.items.length === 0
+  ) {
+    return res.status(400).json({ message: 'Missing data.' });
   }
 
   if (
@@ -43,7 +44,7 @@ app.post('/orders', async (req, res) => {
   ) {
     return res.status(400).json({
       message:
-        'Missing data: Email, name, street, postal code or city is missing.',
+        'Missing data: Email, name, street, postal code, or city is missing.',
     });
   }
 
@@ -51,10 +52,10 @@ app.post('/orders', async (req, res) => {
     ...orderData,
     id: (Math.random() * 1000).toString(),
   };
-  const orders = await fs.readFile('./data/orders.json', 'utf8');
+  const orders = await readFile('./data/orders.json', 'utf-8');
   const allOrders = JSON.parse(orders);
   allOrders.push(newOrder);
-  await fs.writeFile('./data/orders.json', JSON.stringify(allOrders));
+  await writeFile('./data/orders.json', JSON.stringify(allOrders));
   res.status(201).json({ message: 'Order created!' });
 });
 
@@ -66,4 +67,6 @@ app.use((req, res) => {
   res.status(404).json({ message: 'Not found' });
 });
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
