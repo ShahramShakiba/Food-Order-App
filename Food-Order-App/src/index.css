@@ -9,7 +9,7 @@ body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#2e2e2d 15%, #4d4d4b 90%);
+  background: linear-gradient(#2e2e2d 85%, #4d4d4b 90%);
   color: #d9e2f1;
   min-height: 100vh;
 }
@@ -56,6 +56,7 @@ body {
     letter-spacing: 1px;
     color: #f3efdb;
     font-weight: bold;
+    font-size: 0.9rem;
     border-bottom: 1px solid transparent;
     padding: 5px 2px;
     transition: all 0.2s ease-in;
@@ -73,8 +74,8 @@ body {
 }
 
 #main-header button {
-  font-size: 1.5rem;
-  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  font-family: 'L% / ato', sans-serif;
 }
 
 h1 {
@@ -88,22 +89,24 @@ h1 {
 }
 
 #meals {
-  width: 90%;
-  max-width: 70rem;
+  width: 95%;
+  max-width: 80rem;
   list-style: none;
   margin: 2rem auto;
-  padding: 1rem;
+  padding: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 1rem;
+  gap: 2rem;
+  box-shadow: 0 0 65px 15px rgba(151, 151, 151, 0.25);
+  border-radius: 20px;
 }
 
 .meal-item {
-  background-color: #1d1a16;
-  border-radius: 1rem;
+  background: linear-gradient(#141414 45%, #474745 90%);
+  border-radius: 90% / 35%;
   overflow: hidden;
   text-align: center;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 26px rgba(112, 111, 111, 0.3);
 }
 
 .meal-item article {
@@ -122,11 +125,12 @@ h1 {
 .meal-item h3 {
   font-size: 1.5rem;
   font-weight: bold;
-  margin: 0.75rem 0;
+  margin: 0.75rem 0 1.5rem;
 }
 
 .meal-item-description {
-  margin: 1rem;
+  margin: 1rem 2rem;
+  line-height: 1.4;
 }
 
 .meal-item-price {
@@ -135,9 +139,9 @@ h1 {
   color: #ffc404;
   font-size: 0.9rem;
   font-weight: bold;
-  padding: 0.5rem 2rem;
+  padding: 0.6rem 1.5rem;
   margin: 0;
-  border-radius: 4px;
+  border-radius: 90% / 30%;
 }
 
 .meal-item-actions {
@@ -244,23 +248,27 @@ h1 {
 .button {
   font: inherit;
   cursor: pointer;
-  background-color: #ffc404;
-  border: 1px solid #ffc404;
-  color: #1f1a09;
+  background-color: #fdc91d;
+  border: 2px solid #cecbc0;
+  color: #000000;
   padding: 0.5rem 1.5rem;
-  border-radius: 4px;
+  border-radius: 90% / 25%;
+  transition: all 0.2s ease-out;
 }
 
 .button:hover,
 .button:active {
-  background-color: #ffab04;
-  border-color: #ffab04;
-  color: #1f1a09;
+  background-color: #ffb41f;
+  border-color: #494744;
+  color: #ffffff;
+  letter-spacing: 1px;
 }
 
 .text-button {
   font: inherit;
   cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.5px;
   background-color: transparent;
   border: none;
   color: #ccb802;
