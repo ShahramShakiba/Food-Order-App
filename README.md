@@ -11,8 +11,17 @@
 
 > 🗝️ Which Concepts in Have I Covered :
 - <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2699_fe0f/512.gif" alt="⚙" width="18"> &nbsp; _Building & Configuring Components_
+  - Adding _Header_, _Meals_ & _MealItem_ Components
+  - _Formatting_ & _Outputting Numbers_ as Currency
+  - Creating a Configurable & Flexible _Custom Button Component_
+  - Creating a Cart Component <br/><br/>
 - <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2699_fe0f/512.gif" alt="⚙" width="18"> &nbsp; _Using State & Context_
+  - Managing _Add Items_ & _Remove Items_ with CartContext & Reducer
+  - Managing _Opening_ & _Closing_ Modal with ModalContext & useState
+  - Opening the Cart in the Modal via ModalContext <br/><br/>
 - <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2699_fe0f/512.gif" alt="⚙" width="18"> &nbsp; _Managing HTTP Requests & Side Effects_
+  - Fetching Meals Data (_GET HTTP Request_)
+  - Adding a Reusable _Modal Component with useEffect_
 
 
 <br/>
