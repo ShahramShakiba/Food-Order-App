@@ -1,14 +1,18 @@
-#  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" /> &nbsp; Food Order Application <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" height="40" width="36"  />
+#  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" /> &nbsp; Food Order Web Application <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo" height="40" width="36"  />
 
 <!----------------------------------------- Description ---------------------------------------->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Bubbles.png" alt="Bubbles" width="40" height="40" />&nbsp; _Description_
 
-> 🧩 .... 
+#### For this project, my goal is to create a web application for _"Ordering Food"_ that demonstrates my proficiency in React.js. <br/>
+- I plan to explore various topics such as _` Components `_, _` State management `_, _` Context API `_, _` Side Effects `_, _` handling HTTP Requests `_, and More. <br/>
+> 🧩 Through this project, I aim to showcase my understanding of _these concepts_ and _how they can be applied_ in building Interactive and Dynamic Web Applications.
 
 <br/>
 
 > 🗝️ Which Concepts in Have I Covered :
-- <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2699_fe0f/512.gif" alt="⚙" width="18"> &nbsp; _..._
+- <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2699_fe0f/512.gif" alt="⚙" width="18"> &nbsp; _Building & Configuring Components_
+- <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2699_fe0f/512.gif" alt="⚙" width="18"> &nbsp; _Using State & Context_
+- <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2699_fe0f/512.gif" alt="⚙" width="18"> &nbsp; _Managing HTTP Requests & Side Effects_
 
 
 <br/>
