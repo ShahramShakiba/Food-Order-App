@@ -1,12 +1,17 @@
+import Cart from './components/Cart';
 import Header from './components/Header';
-import Meals from './components/Meals';
+import Meals from './components/Meals/Meals';
 import { CartContextProvider } from './context/CartContext';
+import { ModalContextProvider } from './context/ModalContext';
 
 export default function App() {
   return (
-    <CartContextProvider>
-      <Header />
-      <Meals />
-    </CartContextProvider>
+    <ModalContextProvider>
+      <CartContextProvider>
+        <Header />
+        <Meals />
+        <Cart />
+      </CartContextProvider>
+    </ModalContextProvider>
   );
 }

@@ -2,9 +2,15 @@ import { useContext } from 'react';
 import logo from '../assets/logo.jpg';
 import Button from './UI/Button';
 import CartContext from '../context/CartContext';
+import ModalContext from '../context/ModalContext';
 
 export default function Header() {
   const { items } = useContext(CartContext);
+  const { showCart } = useContext(ModalContext);
+
+  const handleShowCart = () => {
+    showCart();
+  };
 
   const totalCartItems = items.reduce((totalItems, item) => {
     return totalItems + item.quantity;
@@ -32,7 +38,9 @@ export default function Header() {
           </ul>
         </div>
 
-        <Button textOnly> Cart ({totalCartItems}) </Button>
+        <Button textOnly onClick={handleShowCart}>
+          Cart ({totalCartItems})
+        </Button>
       </nav>
     </header>
   );
