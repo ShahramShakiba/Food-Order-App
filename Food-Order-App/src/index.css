@@ -9,7 +9,7 @@ body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#29251c, #2c2306);
+  background: linear-gradient(#1f1f1e 25%, #696966 90%);
   color: #d9e2f1;
   min-height: 100vh;
 }
@@ -35,15 +35,57 @@ body {
   border: 2px solid #ffc404;
 }
 
+#main-header #menu {
+  width: 18rem;
+  display: flex;
+  justify-content: space-between;
+
+  .navItems {
+    width: 11rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navItems li {
+    list-style: none;
+    text-decoration: none;
+  }
+
+  .navItems li a {
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: #f3efdb;
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+    padding: 5px 2px;
+    transition: all 0.2s ease-in;
+  }
+
+  .navItems li a:hover {
+    color: #ebcb1b;
+    border-bottom: 1px solid #ebcb1b;
+  }
+
+  .navItems a.active {
+    color: #ebcb1b;
+    border-bottom: 1px solid #ebcb1b;
+  }
+}
+
 #main-header button {
-  font-size: 1.5rem;
+  background: #1f1f1e;
+  color: #f3ecc3;
+  font-size: 1.2rem;
   font-family: 'Lato', sans-serif;
+  border: 3px solid #cacaca;
+  border-radius: 90% / 15%;
+  cursor: pointer;
 }
 
 h1 {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0;
   color: #ffc404;
   letter-spacing: 0.2rem;
