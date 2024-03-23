@@ -9,7 +9,7 @@ body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#1f1f1e 25%, #696966 90%);
+  background: linear-gradient(#2e2e2d 15%, #4d4d4b 90%);
   color: #d9e2f1;
   min-height: 100vh;
 }
