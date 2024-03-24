@@ -17,7 +17,7 @@ export default function CartItem({
       <p className="cart-item-actions">
         <button onClick={onDecrease}> - </button>
 
-        <span> {quantity} </span>
+        <span className="quantity"> {quantity} </span>
 
         <button onClick={onIncrease}> + </button>
       </p>

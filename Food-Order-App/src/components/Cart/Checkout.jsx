@@ -23,16 +23,32 @@ export default function Checkout() {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    const customData = Object.fromEntries(formData.entries()); //extract data
+    const customerData = Object.fromEntries(formData.entries()); //extract data
+
+    // Send HTTP Request (POST)
+    fetch('http://localhost:3000/orders', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        order: {
+          items, // items from CartContext
+          customer: customerData,
+        },
+      }),
+    });
   };
 
   return (
     <Modal open={modalCTX.status === 'checkout'} onClose={handleCloseCheckout}>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <h2> Checkout </h2>
-        <p> Total Amount: {currencyFormatter.format(cartTotal)} </p>
+        <p className="total-amount">
+          Total Amount: &nbsp; {currencyFormatter.format(cartTotal)}
+        </p>
 
-        <Input label="Full Name" type="text" id="full-name" />
+        <Input label="Full Name" type="text" id="name" />
         <Input label="Email Address" type="email" id="email" />
         <Input label="Street" type="text" id="street" />
 
