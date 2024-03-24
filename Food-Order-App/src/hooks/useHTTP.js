@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 // this helper fn is dealing with "Sending-Request"
 async function sendHTTPRequest(url, config) {
@@ -14,8 +14,8 @@ async function sendHTTPRequest(url, config) {
   return resData;
 }
 
-export default function useHTTP(url, config) {
-  const [data, setData] = useState();
+export default function useHTTP(url, config, initialData) {
+  const [data, setData] = useState(initialData);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
@@ -25,7 +25,7 @@ export default function useHTTP(url, config) {
       setIsLoading(true);
 
       try {
-        const resData = sendHTTPRequest(url, config);
+        const resData = await sendHTTPRequest(url, config);
         setData(resData);
       } catch (error) {
         setError(error.message || 'Something Went Wrong!');
@@ -37,7 +37,7 @@ export default function useHTTP(url, config) {
   );
 
   useEffect(() => {
-    if (config && config.method === 'GET') {
+    if ((config && (config.method === 'GET' || !config.method)) || !config) {
       sendRequest();
     }
   }, [sendRequest, config]);

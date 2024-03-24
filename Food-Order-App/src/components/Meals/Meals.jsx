@@ -1,8 +1,26 @@
 import useHTTP from '../../hooks/useHTTP';
 import MealItem from './MealItem';
 
+//since it's GET-Request we don't need to mention "config" obj
+// to prevent infinite-loop we declare it outside of our Component
+// create this obj once only at the first render and thereafter
+// we're always using the same obj in the memory
+const requestConfig = {};
+
 export default function Meals() {
-  
+  const {
+    data: mealList,
+    isLoading,
+    error,
+  } = useHTTP('http://localhost:3000/meals', requestConfig, []);
+  console.log(mealList);
+  if (isLoading) {
+    return <p> Fetching Meals... 🍽️🍴 </p>;
+  }
+  if (!mealList) {
+    return <p> No Meals Found 🔍 </p>;
+  }
+
   return (
     <ul id="meals">
       {mealList.map((meal) => (
