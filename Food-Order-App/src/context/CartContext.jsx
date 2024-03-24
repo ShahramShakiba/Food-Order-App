@@ -15,16 +15,16 @@ function cartReducer(state, action) {
 
     const allUpdatedItems = [...state.items];
 
-    //it'll return -1 if it doesn't find an item
+    //it'll return -1 if it doesn't find an item | Already exist
     if (existingItemIndex > -1) {
       //item exist | update quantity of that item
       const existedItem = state.items[existingItemIndex];
-      const updatedItem = {
+      const newQuantity = {
         ...existedItem,
-        quantity: existedItem.quantity + 1,
+        quantity: parseInt(existedItem.quantity) + 1,
       };
 
-      allUpdatedItems[existingItemIndex] = updatedItem;
+      allUpdatedItems[existingItemIndex] = newQuantity;
     } else {
       //add item | start with quantity of 1
       allUpdatedItems.push({ ...action.item, quantity: 1 });
@@ -38,19 +38,19 @@ function cartReducer(state, action) {
       (item) => item.id === action.id
     );
 
-    const existedItem = state.items[existingItemIndex];
     const allUpdatedItems = [...state.items];
+    const existedItem = state.items[existingItemIndex];
 
     if (existedItem.quantity === 1) {
       //remove that 1 remained item
       allUpdatedItems.splice(existingItemIndex, 1);
     } else {
-      const updatedItem = {
+      const newQuantity = {
         ...existedItem,
-        quantity: existedItem.quantity - 1,
+        quantity: parseInt(existedItem.quantity) - 1,
       };
 
-      allUpdatedItems[existingItemIndex] = updatedItem;
+      allUpdatedItems[existingItemIndex] = newQuantity;
     }
 
     return { ...state, items: allUpdatedItems };

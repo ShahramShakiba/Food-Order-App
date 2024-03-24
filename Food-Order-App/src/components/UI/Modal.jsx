@@ -5,7 +5,7 @@ export default function Modal({ children, open, className = '' }) {
   const dialog = useRef();
 
   useEffect(() => {
-    //recommended pattern 
+    //recommended pattern
     const modal = dialog.current;
     if (open) {
       modal.showModal();

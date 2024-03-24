@@ -1,38 +1,38 @@
 import { createContext, useState } from 'react';
 
 const ModalContext = createContext({
-  progress: '', // 'cart', 'checkout'
-  showCart: () => {},
-  hideCart: () => {},
+  status: '', // 'cart', 'checkout'
+  showModal: () => {},
+  closeModal: () => {},
   showCheckout: () => {},
-  hideCheckout: () => {},
+  closeCheckout: () => {},
 });
 
 export function ModalContextProvider({ children }) {
-  const [userProgress, setUserProgress] = useState('');
+  const [userStatus, setUserStatus] = useState('');
 
-  const showCart = () => {
-    setUserProgress('cart');
+  const showModal = () => {
+    setUserStatus('cart');
   };
 
-  const hideCart = () => {
-    setUserProgress('');
+  const closeModal = () => {
+    setUserStatus('');
   };
 
   const showCheckout = () => {
-    setUserProgress('checkout');
+    setUserStatus('checkout');
   };
 
-  const hideCheckout = () => {
-    setUserProgress('');
+  const closeCheckout = () => {
+    setUserStatus('');
   };
 
   const modalCTX = {
-    progress: userProgress,
-    showCart,
-    hideCart,
+    status: userStatus,
+    showModal,
+    closeModal,
     showCheckout,
-    hideCheckout,
+    closeCheckout,
   };
 
   return (

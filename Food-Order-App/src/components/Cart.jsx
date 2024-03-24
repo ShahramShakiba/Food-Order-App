@@ -7,7 +7,7 @@ import ModalContext from '../context/ModalContext';
 
 export default function Cart() {
   const { items } = useContext(CartContext);
-  const { progress, hideCart } = useContext(ModalContext);
+  const { status, closeModal } = useContext(ModalContext);
 
   const cartTotal = items.reduce(
     (totalPrice, item) => totalPrice + item.quantity * item.price,
@@ -15,11 +15,11 @@ export default function Cart() {
   );
 
   const handleCloseCart = () => {
-    hideCart();
+    closeModal();
   };
 
   return (
-    <Modal className="cart" open={progress === 'cart'}>
+    <Modal className="cart" open={status === 'cart'}>
       <h2> Your Cart </h2>
 
       <ul>
@@ -36,7 +36,8 @@ export default function Cart() {
         <Button textOnly onClick={handleCloseCart}>
           Close
         </Button>
-        <Button onClick={handleCloseCart}> Go to Checkout </Button>
+
+        <Button onClick={handleCloseCart}> Checkout </Button>
       </p>
     </Modal>
   );

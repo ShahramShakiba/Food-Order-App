@@ -6,10 +6,10 @@ import ModalContext from '../context/ModalContext';
 
 export default function Header() {
   const { items } = useContext(CartContext);
-  const { showCart } = useContext(ModalContext);
+  const { showModal } = useContext(ModalContext);
 
   const handleShowCart = () => {
-    showCart();
+    showModal();
   };
 
   const totalCartItems = items.reduce((totalItems, item) => {
@@ -21,7 +21,7 @@ export default function Header() {
       <div id="title">
         <img src={logo} alt="" />
 
-        <h1>Food Ordering</h1>
+        <h1> Food Ordering </h1>
       </div>
 
       <nav id="menu">

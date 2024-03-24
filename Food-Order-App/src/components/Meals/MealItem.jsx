@@ -1,9 +1,10 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { currencyFormatter } from '../../util/formatting';
 import Button from '../UI/Button';
 import CartContext from '../../context/CartContext';
 
 export default function MealItem({ image, name, price, description }) {
+  const [addToCart, setAddToCart] = useState(false);
   const { addItem } = useContext(CartContext);
   const meal = {
     image,
@@ -14,6 +15,7 @@ export default function MealItem({ image, name, price, description }) {
 
   const handleAddingMeal = () => {
     addItem(meal);
+    setAddToCart(true);
   };
 
   return (
@@ -28,7 +30,9 @@ export default function MealItem({ image, name, price, description }) {
         </div>
 
         <div className="meal-item-actions">
-          <Button onClick={handleAddingMeal}> Add to Cart </Button>
+          <Button onClick={handleAddingMeal} disabled={addToCart}>
+            Add to Cart
+          </Button>
         </div>
       </article>
     </li>
