@@ -8,7 +8,7 @@ import CartItem from './CartItem';
 
 export default function Cart() {
   const { items, addItem, removeItem } = useContext(CartContext);
-  const { status, closeModal } = useContext(ModalContext);
+  const { status, closeModal, showCheckout } = useContext(ModalContext);
 
   const cartTotal = items.reduce(
     (totalPrice, item) => totalPrice + item.quantity * item.price,
@@ -19,8 +19,16 @@ export default function Cart() {
     closeModal();
   };
 
+  const handleShowCheckout = () => {
+    showCheckout();
+  };
+
   return (
-    <Modal className="cart" open={status === 'cart'}>
+    <Modal
+      className="cart"
+      open={status === 'cart'}
+      onClose={status === 'cart' ? handleCloseCart : null}
+    >
       <h2> Your Cart </h2>
 
       <ul>
@@ -41,7 +49,9 @@ export default function Cart() {
           Close
         </Button>
 
-        <Button onClick={handleCloseCart}> Checkout </Button>
+        {items.length > 0 && (
+          <Button onClick={handleShowCheckout}> Checkout </Button>
+        )}
       </p>
     </Modal>
   );

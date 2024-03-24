@@ -1,4 +1,5 @@
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Cart/Checkout';
 import Header from './components/Header';
 import Meals from './components/Meals/Meals';
 import { CartContextProvider } from './context/CartContext';
@@ -11,6 +12,7 @@ export default function App() {
         <Header />
         <Meals />
         <Cart />
+        <Checkout />
       </CartContextProvider>
     </ModalContextProvider>
   );
