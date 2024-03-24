@@ -39,7 +39,7 @@ export default function Header() {
         </div>
 
         <Button textOnly onClick={handleShowCart}>
-          Cart ({totalCartItems})
+           🛒 {totalCartItems}
         </Button>
       </nav>
     </header>

@@ -19,9 +19,16 @@ export default function Checkout() {
     modalCTX.closeCheckout();
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const customData = Object.fromEntries(formData.entries()); //extract data
+  };
+
   return (
     <Modal open={modalCTX.status === 'checkout'} onClose={handleCloseCheckout}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2> Checkout </h2>
         <p> Total Amount: {currencyFormatter.format(cartTotal)} </p>
 
