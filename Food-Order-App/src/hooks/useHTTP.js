@@ -19,13 +19,18 @@ export default function useHTTP(url, config, initialData) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
+  // clear "success-modal" after successful request
+  const clearData = () => {
+    setData(initialData);
+  };
+
   // updating-state based on the Request-status | prevent infinite loop
   const sendRequest = useCallback(
-    async function sendRequest() {
+    async function sendRequest(data) {
       setIsLoading(true);
 
       try {
-        const resData = await sendHTTPRequest(url, config);
+        const resData = await sendHTTPRequest(url, { ...config, body: data });
         setData(resData);
       } catch (error) {
         setError(error.message || 'Something Went Wrong!');
@@ -47,5 +52,6 @@ export default function useHTTP(url, config, initialData) {
     isLoading,
     error,
     sendRequest,
+    clearData,
   };
 }

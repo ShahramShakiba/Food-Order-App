@@ -9,7 +9,7 @@ export default function MealItem({ meal }) {
 
   const handleAddingMeal = () => {
     addItem(meal);
-    setAddToCart(true);
+    setAddToCart((prevState) => !prevState);
   };
 
   return (
