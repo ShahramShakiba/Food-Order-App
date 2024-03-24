@@ -1,27 +1,8 @@
-import { useEffect, useState } from 'react';
+import useHTTP from '../../hooks/useHTTP';
 import MealItem from './MealItem';
 
 export default function Meals() {
-  const [mealList, setMealList] = useState([]);
-
-  useEffect(() => {
-    async function fetchMeals() {
-      const response = await fetch('http://localhost:3000/meals');
-
-      if (!response.ok) {
-        // throw new Error(
-        //   `Failed to fetch meals. HTTP error! status: ${response.status}`
-        // );
-      }
-
-      const meals = await response.json();
-      setMealList(meals);
-      // console.log('Fetched meals:', meals);
-    }
-
-    fetchMeals();
-  }, []);
-
+  
   return (
     <ul id="meals">
       {mealList.map((meal) => (
@@ -38,4 +19,26 @@ export default function Meals() {
   - node app.js
 
 * so the backend can runs with the frontend
+*/
+
+/* useEffect
+const [mealList, setMealList] = useState([]);
+
+  useEffect(() => {
+    async function fetchMeals() {
+      const response = await fetch('http://localhost:3000/meals');
+
+      if (!response.ok) {
+         throw new Error(
+          `Failed to fetch meals. HTTP error! status: ${response.status}`
+         );
+      }
+
+      const meals = await response.json();
+      setMealList(meals);
+      /// console.log('Fetched meals:', meals);
+    }
+
+    fetchMeals();
+  }, []);
 */
