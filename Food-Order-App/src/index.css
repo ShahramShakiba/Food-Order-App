@@ -348,3 +348,33 @@ h1 {
     transform: translateY(0);
   }
 }
+
+.fetching-meals {
+  width: 15rem;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-size: 1.2rem;
+  color: #ccb802;
+  border-bottom: 3px solid #ccb802;
+  border-radius: 90% / 25%;
+}
+
+.error {
+  width: 22rem;
+  margin: 3rem auto;
+  text-align: center;
+  background-color: #ff98a5;
+  color: #360b11;
+  padding: 0.5rem 1rem;
+  border-radius: 90% / 15%;
+  box-shadow: 0 8px 65px 20px rgba(238, 135, 135, 0.3);
+}
+
+.no-meals {
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-size: 1.2rem;
+  color: #f882bd;
+}

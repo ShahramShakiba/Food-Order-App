@@ -1,5 +1,6 @@
 import useHTTP from '../../hooks/useHTTP';
 import MealItem from './MealItem';
+import Error from '../Error';
 
 //since it's GET-Request we don't need to mention "config" obj
 // to prevent infinite-loop we declare it outside of our Component
@@ -12,13 +13,18 @@ export default function Meals() {
     data: mealList,
     isLoading,
     error,
-  } = useHTTP('http://localhost:3000/meals', requestConfig, []);
-  console.log(mealList);
+  } = useHTTP('http://localhost:3000/mealss', requestConfig, []);
+
   if (isLoading) {
-    return <p> Fetching Meals... 🍽️🍴 </p>;
+    return <p className="fetching-meals"> Fetching Meals... 🍴 </p>;
   }
+
+  if (error) {
+    return <Error title="Failed To Fetch Meals ⛔" message={error} />;
+  }
+
   if (!mealList) {
-    return <p> No Meals Found 🔍 </p>;
+    return <p className="no-meals"> No Meals Found 🔍 </p>;
   }
 
   return (
