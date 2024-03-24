@@ -1,4 +1,4 @@
-import Cart from './components/Cart';
+import Cart from './components/Cart/Cart';
 import Header from './components/Header';
 import Meals from './components/Meals/Meals';
 import { CartContextProvider } from './context/CartContext';
