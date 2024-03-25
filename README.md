@@ -37,6 +37,8 @@
 
 <!-------- try it live -------->
  ### _Give it a go in real-time and give me a Star_ &nbsp; <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="25"  /> <a href="https://food-order-solo-shahram.netlify.app/" target="_blank"> &nbsp; _Food Order Application_ </a> 
+ - #### ⛔ NOTE:
+   - To run the application successfully, navigate to the backend directory in the terminal and execute the command ` (node app.js) `.
 
  
 <!--------- Video --------->
