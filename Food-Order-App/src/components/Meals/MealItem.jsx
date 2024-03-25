@@ -1,15 +1,13 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { currencyFormatter } from '../../util/formatting';
 import Button from '../UI/Button';
 import CartContext from '../../context/CartContext';
 
 export default function MealItem({ meal }) {
-  const [addToCart, setAddToCart] = useState(false);
   const { addItem } = useContext(CartContext);
 
   const handleAddingMeal = () => {
     addItem(meal);
-    setAddToCart((prevState) => !prevState);
   };
 
   return (
@@ -26,9 +24,7 @@ export default function MealItem({ meal }) {
         </div>
 
         <div className="meal-item-actions">
-          <Button onClick={handleAddingMeal} disabled={addToCart}>
-            Add to Cart
-          </Button>
+          <Button onClick={handleAddingMeal}>Add to Cart</Button>
         </div>
       </article>
     </li>
