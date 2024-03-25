@@ -14,14 +14,23 @@
   - Adding _Header_, _Meals_ & _MealItem_ Components
   - _Formatting_ & _Outputting Numbers_ as Currency
   - Creating a Configurable & Flexible _Custom Button Component_
-  - Creating a Cart Component <br/><br/>
+  - Creating a Cart Component
+  - Adding a custom Input Component
+  - Handling Form Submission via built-in _FormData_ Feature
+  - Creating an Error Component <br/><br/>
 - <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2699_fe0f/512.gif" alt="⚙" width="18"> &nbsp; _Using State & Context_
   - Managing _Add Items_ & _Remove Items_ with CartContext & Reducer
   - Managing _Opening_ & _Closing_ Modal with ModalContext & useState
-  - Opening the Cart in the Modal via ModalContext <br/><br/>
+  - Opening the Cart in the Modal via ModalContext
+  - Managing _Modal visibility_ on both Cart & Checkout
+  - Manage _Increasing_ & _Decreasing Items_ from the Cart via Context
+  - Handling HTTP Loading & Error States <br/><br/>
 - <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2699_fe0f/512.gif" alt="⚙" width="18"> &nbsp; _Managing HTTP Requests & Side Effects_
   - Fetching Meals Data (_GET HTTP Request_)
   - Adding a Reusable _Modal Component with useEffect_
+  - Sending a _POST HTTP Request_ with Order Data
+  - Adding a _Custom HTTP Hook_ to manage HTTP-Request
+  - Avoiding Common Errors and Infinite-Loop using useEffect & useCallback in HTTP Hook
 
 
 <br/>
